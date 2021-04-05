@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const getStaticPaths = async () => {
-  const res = await axios.get("http://localhost:8000/readdata");
+  const res = await axios.get("https://article1229.herokuapp.com/readdata");
   const data = res.data;
   const paths = data.map((news) => {
     return {
@@ -19,7 +19,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await axios.get("http://localhost:8000/readdata/" + id);
+  const res = await axios.get(
+    "https://article1229.herokuapp.com/readdata/" + id
+  );
   const data = res.data;
 
   return {

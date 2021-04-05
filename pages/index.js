@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [artData, setArt] = useState([]);
   const data = async () => {
-    let result = await axios.get("http://localhost:8000/readdata");
+    let result = await axios.get("https://article1229.herokuapp.com/readdata");
     console.log(result.data);
     setArt(result.data);
   };
@@ -26,6 +26,10 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
           rel="stylesheet"
         />
+
+        <meta name="description" content={artData.heading} />
+        <meta property="og:title" content={artData.heading} />
+        <meta property="og:description" content={artData.subheading} />
       </Head>
       <Navbar />
       <div className="boddy">
