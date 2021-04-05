@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await axios.get("http://84b48b3f91ac.ngrok.io/readdata/" + id);
+  const res = await axios.get("https://84b48b3f91ac.ngrok.io/readdata/" + id);
   const data = res.data;
 
   return {
