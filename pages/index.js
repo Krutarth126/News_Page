@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [artData, setArt] = useState([]);
   const data = async () => {
-    let result = await axios.get("https://28f618d40b33.ngrok.io/readdata");
+    let result = await axios.get("http://localhost:8000/readdata");
     console.log(result.data);
     setArt(result.data);
   };

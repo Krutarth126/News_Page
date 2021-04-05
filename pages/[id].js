@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const getStaticPaths = async () => {
-  const res = await axios.get("http://84b48b3f91ac.ngrok.io/readdata");
+  const res = await axios.get("http://localhost:8000/readdata");
   const data = res.data;
   const paths = data.map((news) => {
     return {
@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await axios.get("https://28f618d40b33.ngrok.io/readdata/" + id);
+  const res = await axios.get("http://localhost:8000/readdata/" + id);
   const data = res.data;
 
   return {
