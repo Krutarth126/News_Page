@@ -5,19 +5,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
 import axios from "axios";
-import { useEffect, useState } from "react";
 
-export default function Home() {
-  const [artData, setArt] = useState([]);
-  const data = async () => {
-    let result = await axios.get("https://article1229.herokuapp.com/readdata");
-    console.log(result.data);
-    setArt(result.data);
+export const getServerSideProps = async () => {
+  // const id = context.params.id;
+  const res = await axios.get("https://article1229.herokuapp.com/readdata/");
+  const data = res.data;
+
+  return {
+    props: { data: data },
   };
+};
 
-  useEffect(() => {
-    data();
-  }, []);
+export default function Home({ data }) {
+  // const [artData, setArt] = useState([]);
+  // const data = async () => {
+  //   let result = await axios.get("https://article1229.herokuapp.com/readdata");
+  //   console.log(result.data);
+  //   setArt(result.data);
+  // };
+
+  // useEffect(() => {
+  //   data();
+  // }, []);
   return (
     <>
       <Head>
@@ -27,13 +36,18 @@ export default function Home() {
           rel="stylesheet"
         />
 
-        <meta name="description" content={artData.heading} />
-        <meta property="og:title" content={artData.heading} />
-        <meta property="og:description" content={artData.subheading} />
+        {/* Open Graph */}
+
+        <meta property="og:title" content={data.heading} key="ogtitle" />
+        <meta
+          property="og:description"
+          content={data.subheading}
+          key="ogdesc"
+        />
       </Head>
       <Navbar />
       <div className="boddy">
-        {artData.map(({ heading, subheading, url, content, _id }, idx) => {
+        {data.map(({ heading, subheading, url, content, _id }, idx) => {
           return (
             <Article
               heading={heading}
