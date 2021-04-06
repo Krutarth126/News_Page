@@ -36,16 +36,16 @@ export default function Home({ data }) {
           rel="stylesheet"
         />
 
-        <meta property="og:title" content="European Travel Destinations" />
+        <meta property="og:title" content="Indian Express" />
         <meta
           property="og:description"
-          content="Offering tour packages for individuals or groups."
+          content="Get the latest news of whole country."
         />
         <meta
           property="og:image"
-          content="http://euro-travel-example.com/thumbnail.jpg"
+          content="https://timesofindia.indiatimes.com/thumb/msid-81923706,width-1200,height-900,resizemode-4/81923706.jpg"
         />
-        <meta property="og:url" content="https://news-page12.vercel.app/" />
+        <meta property="og:url" content="https://news-page11.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
