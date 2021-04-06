@@ -20,7 +20,7 @@ const Admin = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     console.log(state);
-    await axios.post("http://localhost:8000/post", state);
+    await axios.post("https://article1229.herokuapp.com/post", state);
   };
   return (
     <>
