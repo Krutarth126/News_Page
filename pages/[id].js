@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Head from "next/head";
 
 // export const getStaticPaths = async () => {
 //   const res = await axios.get("https://article1229.herokuapp.com/readdata");
