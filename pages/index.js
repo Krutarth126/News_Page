@@ -45,7 +45,7 @@ export default function Home({ data }) {
           property="og:image"
           content="https://timesofindia.indiatimes.com/thumb/msid-81923706,width-1200,height-900,resizemode-4/81923706.jpg"
         />
-        <meta property="og:url" content="https://news-page11.vercel.app/" />
+        <meta property="og:url" content="https://news-page.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />

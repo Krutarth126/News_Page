@@ -32,6 +32,16 @@ export const getServerSideProps = async (context) => {
 const ArticleData = ({ news }) => {
   return (
     <>
+      <Head>
+        <meta property="og:title" content={news.heading} />
+        <meta property="og:description" content={news.subheading} />
+        <meta property="og:image" content={news.url} />
+        <meta
+          property="og:url"
+          content={`https://news-page11.vercel.app/${news._id}`}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       <Navbar />
       <div className="articleData">
         <img src={news.url} alt="" />
