@@ -36,14 +36,17 @@ export default function Home({ data }) {
           rel="stylesheet"
         />
 
-        {/* Open Graph */}
-
-        <meta property="og:title" content={data.heading} key="ogtitle" />
+        <meta property="og:title" content="European Travel Destinations" />
         <meta
           property="og:description"
-          content={data.subheading}
-          key="ogdesc"
+          content="Offering tour packages for individuals or groups."
         />
+        <meta
+          property="og:image"
+          content="http://euro-travel-example.com/thumbnail.jpg"
+        />
+        <meta property="og:url" content="https://news-page12.vercel.app/" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
       <div className="boddy">
