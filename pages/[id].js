@@ -43,14 +43,13 @@ const ArticleData = ({ news }) => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Navbar />
+
       <div className="articleData">
         <img src={news.url} alt="" />
         <h1>{news.heading}</h1>
         <h3>{news.subheading}</h3>
         <p>{news.content}</p>
       </div>
-      <Footer />
     </>
   );
 };

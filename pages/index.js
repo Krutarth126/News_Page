@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -29,30 +28,11 @@ export default function Home({ data }) {
   // }, []);
   return (
     <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
-          rel="stylesheet"
-        />
-
-        <meta property="og:title" content="Indian Express" />
-        <meta
-          property="og:description"
-          content="Get the latest news of whole country."
-        />
-        <meta
-          property="og:image"
-          content="https://timesofindia.indiatimes.com/thumb/msid-81923706,width-1200,height-900,resizemode-4/81923706.jpg"
-        />
-        <meta property="og:url" content="https://news-page.vercel.app/" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <Navbar />
       <div className="boddy">
         {data.map(({ heading, subheading, url, content, _id }, idx) => {
           return (
             <Article
+              key={idx}
               heading={heading}
               subheading={subheading}
               url={url}
@@ -63,7 +43,6 @@ export default function Home({ data }) {
           );
         })}
       </div>
-      <Footer />
     </>
   );
 }

@@ -24,7 +24,6 @@ const Admin = () => {
   };
   return (
     <>
-      <Navbar />
       <div className="admin">
         <form onSubmit={submitHandler}>
           <div>
@@ -69,7 +68,6 @@ const Admin = () => {
           </div>
         </form>
       </div>
-      <Footer />
     </>
   );
 };
