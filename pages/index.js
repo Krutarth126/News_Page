@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
 import axios from "axios";
+import Head from "next/head";
 
 export const getServerSideProps = async () => {
   // const id = context.params.id;
