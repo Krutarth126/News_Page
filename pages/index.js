@@ -29,6 +29,22 @@ export default function Home({ data }) {
   return (
     <>
       <Head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="allow-search" content="yes" />
+        <meta name="googlebot" content="index,follow, noodp" />
+        <meta name="yahooSeeker" content="index, follow" />
+        <meta name="msnbot" content="index, follow" />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=3"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=3"
+        />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
@@ -46,6 +62,11 @@ export default function Home({ data }) {
         />
         <meta property="og:url" content="https://news-page.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Indian Express" />
+        <meta name="theme-color" content="#EE1729" />
       </Head>
       <div className="boddy">
         {data.map(({ heading, subheading, url, content, _id }, idx) => {
