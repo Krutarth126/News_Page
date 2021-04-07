@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
 import axios from "axios";
+import Head from "next/head";
 
 const Admin = () => {
   const [state, setState] = useState({
