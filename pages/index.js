@@ -5,34 +5,32 @@ import Article from "../components/Article";
 import Footer from "../components/Footer";
 import axios from "axios";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
-export const getServerSideProps = async () => {
-  // const id = context.params.id;
-  const res = await axios.get("https://article1229.herokuapp.com/readdata/");
-  const data = res.data;
+// export const getServerSideProps = async () => {
+//   // const id = context.params.id;
+//   const res = await axios.get("https://article1229.herokuapp.com/readdata/");
+//   const data = res.data;
 
-  return {
-    props: { data: data },
+//   return {
+//     props: { data: data },
+//   };
+// };
+
+export default function Home() {
+  const [data, setArt] = useState([]);
+  const artdata = async () => {
+    let result = await axios.get("https://article1229.herokuapp.com/readdata");
+    console.log(result.data);
+    setArt(result.data.reverse());
   };
-};
 
-export default function Home({ data }) {
-  // const [artData, setArt] = useState([]);
-  // const data = async () => {
-  //   let result = await axios.get("https://article1229.herokuapp.com/readdata");
-  //   console.log(result.data);
-  //   setArt(result.data);
-  // };
-
-  // useEffect(() => {
-  //   data();
-  // }, []);
+  useEffect(() => {
+    artdata();
+  }, []);
   return (
     <>
       <Head>
-        <meta charset="UTF-8" />
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="allow-search" content="yes" />
         <meta name="googlebot" content="index,follow, noodp" />
         <meta name="yahooSeeker" content="index, follow" />
@@ -61,6 +59,7 @@ export default function Home({ data }) {
           property="og:image"
           content="https://timesofindia.indiatimes.com/thumb/msid-81923706,width-1200,height-900,resizemode-4/81923706.jpg"
         />
+        <meta property="og:type" content="article" />
         <meta property="og:url" content="https://news-page.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="mobile-web-app-capable" content="yes" />
