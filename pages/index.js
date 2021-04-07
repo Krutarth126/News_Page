@@ -1,33 +1,19 @@
-import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Article from "../components/Article";
-import Footer from "../components/Footer";
 import axios from "axios";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
-// export const getServerSideProps = async () => {
-//   // const id = context.params.id;
-//   const res = await axios.get("https://article1229.herokuapp.com/readdata/");
-//   const data = res.data;
+export const getServerSideProps = async () => {
+  const res = await axios.get("https://article1229.herokuapp.com/readdata/");
+  const data = res.data;
 
-//   return {
-//     props: { data: data },
-//   };
-// };
-
-export default function Home() {
-  const [data, setArt] = useState([]);
-  const artdata = async () => {
-    let result = await axios.get("https://article1229.herokuapp.com/readdata");
-    console.log(result.data);
-    setArt(result.data.reverse());
+  return {
+    props: { data: data },
   };
+};
 
-  useEffect(() => {
-    artdata();
-  }, []);
+export default function Home({ data }) {
   return (
     <>
       <Head>
